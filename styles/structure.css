@@ -1,0 +1,42 @@
+html {
+    font-size: 1px;
+}
+
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    border: 2px solid red;
+    margin: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game_area {
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#cards_box {
+    display: grid;
+    grid-template-columns: 50rem 50rem 100rem;
+    grid-template-rows: 50rem 100rem 50rem;
+    width: 200rem;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 50rem);
+    grid-template-rows: repeat(5, 50rem);
+}
+
+#board>* {
+    border: 1px solid black;
+    margin: 0;
+}

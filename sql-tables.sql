@@ -24,12 +24,12 @@ CREATE TABLE player_games (
     FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE
 );
 
-CREATE TABLE moves (
+CREATE TABLE turns (
     game_id INTEGER,
     move_number INTEGER,
     piece INTEGER,
     card_id INTEGER,
-    card_choice INTEGER,
+    move_id INTEGER,
     FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE,
     FOREIGN KEY (card_id) REFERENCES cards(id) ON DELETE SET NULL
 );
@@ -37,10 +37,11 @@ CREATE TABLE moves (
 CREATE TABLE cards (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(10),
-    option1 VARCHAR(7),
-    option2 VARCHAR(7),
-    option3 VARCHAR(7),
-    option4 VARCHAR(7)
+    starting_color VARCHAR(4),
+    option1 VARCHAR(5),
+    option2 VARCHAR(5),
+    option3 VARCHAR(5),
+    option4 VARCHAR(5)
 );
 
 CREATE TABLE card_games (
